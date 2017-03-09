@@ -10,7 +10,7 @@ import play.api.mvc.{Action, Controller}
 import services._
 
 
-class ProfileController @Inject() (cache: CacheApi,cacheService:CacheTrait) extends Controller {
+class ProfileController @Inject() (cacheService:CacheTrait) extends Controller {
 
   def default=Action{implicit request=>
 

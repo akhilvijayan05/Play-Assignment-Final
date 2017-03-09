@@ -9,7 +9,7 @@ import services.{CacheTrait, HashingPassword, UserDetails}
 /**
   * Created by knoldus on 7/3/17.
   */
-class MaintenanceController @Inject()(cache: CacheApi, cacheService: CacheTrait) extends Controller {
+class MaintenanceController @Inject()( cacheService: CacheTrait) extends Controller {
 
   def default = Action {implicit request=>
 

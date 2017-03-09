@@ -15,7 +15,7 @@ import scala.collection.mutable.ListBuffer
 /**
   * Created by knoldus on 4/3/17.
   */
-class SignupController @Inject() (cache: CacheApi,hashing:HashingTrait,cacheService: CacheTrait,configuration: Configuration) extends Controller {
+class SignupController @Inject() (hashing:HashingTrait,cacheService: CacheTrait,configuration: Configuration) extends Controller {
 
   val userForm = Form(
     mapping(

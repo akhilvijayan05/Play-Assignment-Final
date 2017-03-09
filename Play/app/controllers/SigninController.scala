@@ -10,7 +10,7 @@ import play.api.mvc.{Action, Controller}
 import services._
 
 
-class SigninController @Inject() (cache: CacheApi,hashing:HashingTrait,cacheService: CacheTrait) extends Controller {
+class SigninController @Inject() (hashing:HashingTrait,cacheService: CacheTrait) extends Controller {
 
   val userForm = Form(
     mapping(
