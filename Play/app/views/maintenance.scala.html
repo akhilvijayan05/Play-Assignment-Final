@@ -1,0 +1,31 @@
+@import services.UserDetails
+@(username:String,users:List[UserDetails])
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav class="navbar navbar-inverse" >
+    <div class="container-fluid" align="right">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"><img src="@routes.Assets.versioned("images/Knoldus.jpg")" height="35" width="100" id="audi" ></a>
+        </div>
+        <div align="right" style="color:white;">
+            Welcome @username &nbsp;<a href="@routes.FrontController.front()"><button>Logout</button></a>
+        </div>
+
+    </div>
+</nav>
+@for(user<-users){
+<tbody>
+<tr>
+    <td>@user.username</td>
+    <td><button class="btn"><a href="@routes.MaintenanceController.suspendUser(user.username)">Suspend</a></button></td>
+    <td><button class="btn"><a href="@routes.MaintenanceController.resumeUser(user.username)">Resume</a></button></td>
+</tr>
+</tbody><br>
+}
+</body>
+</html>
